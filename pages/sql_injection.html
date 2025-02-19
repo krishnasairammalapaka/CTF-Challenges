@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic SQL Injection Challenge</title>
+    <!-- Optional: Link to your CSS file if you have one -->
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Basic SQL Injection Challenge</h1>
+    </header>
+    <main>
+        <p>A small web application has a login page that is vulnerable to SQL injection.</p>
+        <p>The flag is stored in the database under the admin account. Your objective is to bypass the authentication by exploiting this vulnerability.</p>
+        <p>For example, try entering the following payload in the username field:</p>
+        <pre>admin' OR '1'='1</pre>
+        <p>Leave the password field as is (or provide any value) to successfully log in and retrieve the flag from the admin account's details.</p>
+        <p><strong>Hint:</strong> Understand how SQL injection can bypass authentication. A simple approach is to inject a condition that always evaluates to true.</p>
+    </main>
+    <footer>
+        <p>Good luck, and happy CTF-ing!</p>
+    </footer>
+</body>
+</html> 
