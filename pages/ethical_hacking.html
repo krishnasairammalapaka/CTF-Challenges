@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Ethical Hacking Challenges</title>
+    <!-- Optional: Link to your CSS file if you have one -->
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Advanced Ethical Hacking Challenges</h1>
+        <p class="difficulty">Difficulty Level: Expert | Category: Red Team</p>
+    </header>
+
+    <main>
+        <!-- Challenge 1: Enterprise Network Penetration -->
+        <section class="challenge" id="enterprise-pentest">
+            <h2>Challenge 1: Corporate Infrastructure Breach</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    You're tasked with penetrating a corporate network that implements defense-in-depth. 
+                    The network includes Active Directory, network segmentation, IDS/IPS systems, and 
+                    various security controls. Your goal is to achieve domain admin access and locate 
+                    the flag in a secured database.
+                </p>
+
+                <h3>Environment Access:</h3>
+                <p>Initial access is provided through a VPN connection to a simulated corporate network:</p>
+                <pre><code>VPN Endpoint: vpn.challenge.local
+Initial Access: Compromised employee workstation (10.0.5.15)
+Target Domain: CORP.CHALLENGE.LOCAL</code></pre>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Perform initial enumeration without triggering IDS alerts</li>
+                    <li>Exploit Active Directory misconfigurations</li>
+                    <li>Achieve lateral movement while evading detection</li>
+                    <li>Escalate privileges to Domain Admin</li>
+                    <li>Access the secured database and retrieve the flag</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Resources:</h4>
+                    <ul>
+                        <li><a href="/files/network_diagram.pdf" download>Network Diagram</a></li>
+                        <li><a href="/files/vpn_config.ovpn" download>VPN Configuration</a></li>
+                        <li><a href="/files/initial_access.txt" download>Initial Access Credentials</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge 2: IoT Device Exploitation -->
+        <section class="challenge" id="iot-exploitation">
+            <h2>Challenge 2: Smart Building System Compromise</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    A smart building management system controls critical infrastructure including HVAC, 
+                    access control, and surveillance. Your task is to compromise the system by exploiting 
+                    various IoT vulnerabilities while avoiding detection by the building's security team.
+                </p>
+
+                <h3>Target Environment:</h3>
+                <pre><code>Management Interface: https://bms.challenge.local
+IoT Protocol Stack: MQTT, CoAP, Modbus TCP
+Security Controls: TLS, Device Authentication, Firmware Signing</code></pre>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Analyze and exploit firmware vulnerabilities</li>
+                    <li>Bypass device authentication mechanisms</li>
+                    <li>Exploit protocol-specific vulnerabilities</li>
+                    <li>Gain control of the central management system</li>
+                    <li>Extract the flag from the secure storage</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Files:</h4>
+                    <ul>
+                        <li><a href="/files/device_firmware.bin" download>IoT Device Firmware</a></li>
+                        <li><a href="/files/protocol_specs.pdf" download>Protocol Specifications</a></li>
+                        <li><a href="/files/device_docs.pdf" download>Device Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge 3: Cloud Infrastructure Attack -->
+        <section class="challenge" id="cloud-attack">
+            <h2>Challenge 3: Cloud Platform Infiltration</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    Target is a multi-cloud environment using AWS and Azure services. The infrastructure 
+                    implements various security controls including IAM, network security groups, and 
+                    WAF. Your goal is to compromise the environment and locate the flag in a secured S3 bucket.
+                </p>
+
+                <h3>Initial Access:</h3>
+                <pre><code>Compromised Credentials: AWS IAM User (Limited Permissions)
+Web Application: https://app.challenge.cloud
+CI/CD Pipeline: Jenkins instance accessible internally</code></pre>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Enumerate cloud resources without triggering alerts</li>
+                    <li>Exploit misconfigurations in cloud services</li>
+                    <li>Perform privilege escalation in the cloud environment</li>
+                    <li>Bypass WAF and security controls</li>
+                    <li>Access the secured S3 bucket containing the flag</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Materials:</h4>
+                    <ul>
+                        <li><a href="/files/cloud_architecture.pdf" download>Cloud Architecture Diagram</a></li>
+                        <li><a href="/files/iam_policy.json" download>Initial IAM Policy</a></li>
+                        <li><a href="/files/aws_credentials.txt" download>AWS Credentials</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge 4: Supply Chain Attack -->
+        <section class="challenge" id="supply-chain">
+            <h2>Challenge 4: Software Supply Chain Compromise</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    A software company uses a complex CI/CD pipeline for their application deployment. 
+                    Your goal is to compromise the pipeline, inject malicious code, and extract the flag 
+                    from a production system without being detected.
+                </p>
+
+                <h3>Environment Details:</h3>
+                <pre><code>Source Code: Private GitHub repository
+CI/CD: GitLab CI with custom security checks
+Deployment: Kubernetes cluster with Pod Security Policies
+Security: Code signing, container scanning, runtime security</code></pre>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Analyze the CI/CD pipeline for vulnerabilities</li>
+                    <li>Bypass code signing and security checks</li>
+                    <li>Inject malicious code into the build process</li>
+                    <li>Evade runtime security controls</li>
+                    <li>Extract the flag from production environment</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Resources:</h4>
+                    <ul>
+                        <li><a href="/files/pipeline_config.yml" download>CI/CD Configuration</a></li>
+                        <li><a href="/files/k8s_policies.yaml" download>Kubernetes Security Policies</a></li>
+                        <li><a href="/files/build_scripts.zip" download>Build Scripts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="warning">
+            <h3>⚠️ Important Guidelines:</h3>
+            <ul>
+                <li>These challenges simulate real-world attack scenarios</li>
+                <li>Follow ethical hacking principles and stay within scope</li>
+                <li>Document all findings and attack paths</li>
+                <li>Some attacks may require custom exploit development</li>
+                <li>Focus on evasion techniques and stealth</li>
+            </ul>
+        </div>
+        <p>Remember: The goal is to think like an attacker while maintaining ethical boundaries.</p>
+    </footer>
+
+    <style>
+        .challenge {
+            margin: 2em 0;
+            padding: 1.5em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .difficulty {
+            color: #d63031;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1.5em;
+            border-radius: 8px;
+            margin-top: 2em;
+        }
+        
+        .resources, .hints {
+            margin: 1em 0;
+            padding: 1em;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 1em;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h2 {
+            color: #2d3436;
+            border-bottom: 2px solid #dfe6e9;
+            padding-bottom: 0.5em;
+        }
+
+        h3 {
+            color: #2d3436;
+            margin-top: 1.5em;
+        }
+
+        .challenge-content {
+            margin-left: 1em;
+        }
+    </style>
+</body>
+</html> 

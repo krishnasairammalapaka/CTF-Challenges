@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brute Force Challenge</title>
+    <!-- Optional: Link to your CSS file if you have one -->
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Brute Force Challenge - Password Cracking</h1>
+    </header>
+    <main>
+        <section class="challenge-description">
+            <h2>Objective</h2>
+            <p>
+                You've intercepted an encrypted file and its corresponding Python encryption script. 
+                The encryption uses a simple algorithm with a 4-digit numeric password. Your task is 
+                to write a script to brute force the password and decrypt the file to retrieve the flag.
+            </p>
+        </section>
+
+        <section class="challenge-details">
+            <h2>Challenge Files</h2>
+            <p>You are provided with two files:</p>
+            <ol>
+                <li>
+                    <code>encrypted.bin</code> - The encrypted file containing the flag
+                    <br>
+                    <a href="/files/encrypted.bin" download>Download encrypted.bin</a>
+                </li>
+                <li>
+                    <code>encryption_script.py</code> - The script used for encryption
+                    <br>
+                    <a href="/files/encryption_script.py" download>Download encryption_script.py</a>
+                </li>
+            </ol>
+        </section>
+
+        <section class="encryption-details">
+            <h2>Encryption Information</h2>
+            <p>The encryption algorithm works as follows:</p>
+            <ul>
+                <li>Uses a 4-digit numeric password (0000-9999)</li>
+                <li>Each byte of the input is XORed with a byte derived from the password</li>
+                <li>The password is used as a seed for a simple pseudo-random number generator</li>
+            </ul>
+            <p>Here's the relevant part of the encryption code:</p>
+            <pre><code>def encrypt(data, password):
+    # Convert password to integer
+    seed = int(password)
+    # Initialize random generator
+    random.seed(seed)
+    
+    # Encrypt each byte
+    encrypted = bytearray()
+    for byte in data:
+        key_byte = random.randint(0, 255)
+        encrypted_byte = byte ^ key_byte
+        encrypted.append(encrypted_byte)
+    
+    return encrypted</code></pre>
+        </section>
+
+        <section class="task">
+            <h2>Your Task</h2>
+            <p>
+                Write a Python script that will:
+            </p>
+            <ol>
+                <li>Read the encrypted file</li>
+                <li>Try all possible 4-digit passwords (0000-9999)</li>
+                <li>Decrypt the content using each password</li>
+                <li>Identify the correct password by checking if the decrypted content contains "flag{"</li>
+            </ol>
+        </section>
+
+        <section class="hints">
+            <h2>Hints</h2>
+            <ul>
+                <li>The decryption function is the same as the encryption function (XOR is reversible)</li>
+                <li>The flag format is: flag{...}</li>
+                <li>Consider using parallel processing to speed up the brute force attempt</li>
+                <li>The random seed will produce the same sequence of numbers for the same password</li>
+            </ul>
+        </section>
+
+        <section class="example">
+            <h2>Example Solution Structure</h2>
+            <pre><code>def try_password(encrypted_data, password):
+    # Convert password to 4-digit string
+    password_str = str(password).zfill(4)
+    
+    # Decrypt using the password
+    decrypted = decrypt(encrypted_data, password_str)
+    
+    # Check if the result contains the flag format
+    try:
+        result = decrypted.decode('utf-8')
+        if 'flag{' in result:
+            return True, result
+    except:
+        pass
+    
+    return False, None</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Good luck cracking the password!</p>
+    </footer>
+</body>
+</html> 

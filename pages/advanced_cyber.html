@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Cybersecurity Challenges</title>
+    <!-- Optional: Link to your CSS file if you have one -->
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Advanced Cybersecurity Challenges</h1>
+        <p class="difficulty">Difficulty Level: Expert</p>
+    </header>
+
+    <main>
+        <!-- Challenge 1: Advanced Web Application Security -->
+        <section class="challenge" id="web-security">
+            <h2>Challenge 1: Secure Architecture Assessment</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    You've been given access to a vulnerable banking application's source code and infrastructure diagrams. 
+                    The application uses OAuth2.0, handles financial transactions, and stores sensitive customer data.
+                </p>
+                
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Identify security vulnerabilities in the provided architecture</li>
+                    <li>Exploit a chain of vulnerabilities to achieve privilege escalation</li>
+                    <li>Extract the hidden flag from the secure storage system</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Resources:</h4>
+                    <ul>
+                        <li><a href="/files/banking_app.zip" download>Application Source Code</a></li>
+                        <li><a href="/files/infrastructure.pdf" download>Infrastructure Diagrams</a></li>
+                        <li><a href="/files/api_documentation.pdf" download>API Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="hints">
+                    <h4>Key Areas to Investigate:</h4>
+                    <ul>
+                        <li>OAuth2.0 implementation flaws</li>
+                        <li>JWT token handling</li>
+                        <li>API endpoint security</li>
+                        <li>Database access controls</li>
+                        <li>Encryption implementation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge 2: Advanced Forensics -->
+        <section class="challenge" id="advanced-forensics">
+            <h2>Challenge 2: APT Investigation</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    A critical government system has been compromised. You have a memory dump, network captures, 
+                    and system logs from the time of the incident. The attacker used sophisticated techniques 
+                    including custom malware and zero-day exploits.
+                </p>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Analyze the memory dump to identify the malware's entry point</li>
+                    <li>Reverse engineer the custom malware</li>
+                    <li>Track the attacker's lateral movement through the network</li>
+                    <li>Find and decode the exfiltrated data to retrieve the flag</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Files:</h4>
+                    <ul>
+                        <li><a href="/files/memory.dmp" download>Memory Dump</a></li>
+                        <li><a href="/files/network.pcap" download>Network Capture</a></li>
+                        <li><a href="/files/system.log" download>System Logs</a></li>
+                    </ul>
+                </div>
+
+                <div class="hints">
+                    <h4>Required Skills:</h4>
+                    <ul>
+                        <li>Memory forensics (Volatility)</li>
+                        <li>Malware analysis</li>
+                        <li>Network traffic analysis</li>
+                        <li>Reverse engineering</li>
+                        <li>Cryptography</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge 3: Advanced Cryptography -->
+        <section class="challenge" id="crypto-challenge">
+            <h2>Challenge 3: Quantum-Safe Encryption Break</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    You've intercepted communications protected by a custom post-quantum cryptographic system. 
+                    The system uses a combination of lattice-based cryptography and zero-knowledge proofs, 
+                    but contains a critical implementation flaw.
+                </p>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Analyze the cryptographic implementation</li>
+                    <li>Identify the mathematical vulnerability</li>
+                    <li>Develop an exploit to break the encryption</li>
+                    <li>Decrypt the intercepted message to retrieve the flag</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Materials:</h4>
+                    <ul>
+                        <li><a href="/files/crypto_implementation.py" download>Cryptographic Implementation</a></li>
+                        <li><a href="/files/intercepted.bin" download>Intercepted Message</a></li>
+                        <li><a href="/files/public_parameters.json" download>Public Parameters</a></li>
+                    </ul>
+                </div>
+
+                <div class="hints">
+                    <h4>Required Knowledge:</h4>
+                    <ul>
+                        <li>Lattice-based cryptography</li>
+                        <li>Zero-knowledge proofs</li>
+                        <li>Number theory</li>
+                        <li>Side-channel attacks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge 4: Hardware Security -->
+        <section class="challenge" id="hardware-security">
+            <h2>Challenge 4: Secure Hardware Bypass</h2>
+            <div class="challenge-content">
+                <h3>Scenario:</h3>
+                <p>
+                    You have access to a secure hardware device that uses a Trusted Platform Module (TPM) 
+                    and implements secure boot. The flag is stored in a secure enclave protected by multiple 
+                    hardware security mechanisms.
+                </p>
+
+                <h3>Your Tasks:</h3>
+                <ol>
+                    <li>Bypass the secure boot mechanism</li>
+                    <li>Extract the TPM secrets</li>
+                    <li>Break into the secure enclave</li>
+                    <li>Retrieve the flag from protected storage</li>
+                </ol>
+
+                <div class="resources">
+                    <h4>Provided Resources:</h4>
+                    <ul>
+                        <li><a href="/files/hardware_specs.pdf" download>Hardware Specifications</a></li>
+                        <li><a href="/files/firmware.bin" download>Device Firmware</a></li>
+                        <li><a href="/files/debug_interface.pdf" download>Debug Interface Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="hints">
+                    <h4>Required Skills:</h4>
+                    <ul>
+                        <li>Hardware security</li>
+                        <li>Firmware analysis</li>
+                        <li>Side-channel attacks</li>
+                        <li>TPM security</li>
+                        <li>Secure boot mechanisms</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="warning">
+            <h3>⚠️ Important Notes:</h3>
+            <ul>
+                <li>These challenges are designed for expert-level security professionals</li>
+                <li>Each challenge may take several hours to complete</li>
+                <li>Multiple security concepts must be combined to reach the solution</li>
+                <li>Document your approach - methodology matters as much as the final flag</li>
+            </ul>
+        </div>
+        <p>Good luck, and remember: persistence is key!</p>
+    </footer>
+
+    <style>
+        .challenge {
+            margin: 2em 0;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .difficulty {
+            color: #ff4444;
+            font-weight: bold;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            padding: 1em;
+            border-radius: 5px;
+            margin-top: 2em;
+        }
+        
+        .resources, .hints {
+            margin: 1em 0;
+            padding: 1em;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+</html> 

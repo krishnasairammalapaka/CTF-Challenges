@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensics Challenge</title>
+    <!-- Optional: Link to your CSS file if you have one -->
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Forensics Challenge</h1>
+    </header>
+    <main>
+        <section class="challenge-description">
+            <h2>Objective</h2>
+            <p>
+                You are given a disk image <code>forensic_image.dd</code>, which contains evidence of deleted files. 
+                Your task is to use digital forensics tools to analyze the disk image, recover any deleted files, 
+                and extract a hidden flag from them.
+            </p>
+        </section>
+
+        <section class="challenge-details">
+            <h2>Challenge Description</h2>
+            <p>
+                You have been provided with a raw disk image file, <code>forensic_image.dd</code>, which was obtained 
+                from a compromised system. The disk image is believed to contain deleted files, and potentially hidden 
+                data that could point to an important flag for the CTF competition.
+            </p>
+
+            <h3>Your goals:</h3>
+            <ol>
+                <li>Analyze the disk image for any traces of deleted files.</li>
+                <li>Recover the deleted files that might contain hidden or important information.</li>
+                <li>Extract the hidden flag from the recovered files.</li>
+            </ol>
+        </section>
+
+        <section class="tools">
+            <h2>Recommended Tools</h2>
+            <ul>
+                <li><strong>Autopsy:</strong> A digital forensics platform for analyzing disk images</li>
+                <li><strong>SleuthKit:</strong> Command-line tools for analyzing and recovering data</li>
+                <li><strong>Foremost:</strong> A tool for file carving</li>
+                <li><strong>ddrescue:</strong> (optional) For recovering corrupted sectors</li>
+            </ul>
+        </section>
+
+        <section class="instructions">
+            <h2>Detailed Instructions</h2>
+            
+            <h3>1. Mount the disk image</h3>
+            <pre><code>sudo mount -o loop forensic_image.dd /mnt/forensic_image</code></pre>
+            
+            <h3>2. Examine the file system</h3>
+            <pre><code>ls /mnt/forensic_image</code></pre>
+            
+            <h3>3. Identify deleted files</h3>
+            <pre><code>fls -r forensic_image.dd</code></pre>
+            
+            <h3>4. Recover deleted files</h3>
+            <pre><code>foremost -i forensic_image.dd -o recovered_files/</code></pre>
+            
+            <h3>5. Search for the flag</h3>
+            <pre><code>grep -r "flag{" recovered_files/</code></pre>
+            
+            <h3>6. Check for hidden data</h3>
+            <pre><code>binwalk recovered_image.png</code></pre>
+        </section>
+
+        <section class="hints">
+            <h2>Hints for Success</h2>
+            <ul>
+                <li>Pay special attention to files marked as deleted in Autopsy/SleuthKit</li>
+                <li>Remember that files may be fragmented across the disk</li>
+                <li>Look for common file signatures (JPEG: FFD8, PNG: 89504E47)</li>
+                <li>Check recovered files for steganography</li>
+                <li>Use grep to scan for flag patterns</li>
+            </ul>
+        </section>
+
+        <section class="download">
+            <h2>Challenge Files</h2>
+            <p>Download the disk image to begin the challenge:</p>
+            <p>
+                <a href="/files/forensic_image.dd" download>Download forensic_image.dd</a>
+            </p>
+        </section>
+
+        <section class="flag-format">
+            <h2>Expected Flag Format</h2>
+            <p>The flag will be in the following format:</p>
+            <pre><code>flag{this_is_the_flag_you_found_in_the_recovered_file}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Good luck, and happy forensics investigation!</p>
+    </footer>
+</body>
+</html> 
